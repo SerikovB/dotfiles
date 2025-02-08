@@ -51,6 +51,7 @@ return {
                                 },
                         },
                 })
+                lspc.bashls.setup({})
                 lspc.clangd.setup({})
                 lspc.cmake.setup({})
                 lspc.ts_ls.setup({})
