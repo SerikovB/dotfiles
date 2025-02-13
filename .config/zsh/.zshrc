@@ -69,8 +69,10 @@ zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
 # Completion
-autoload -Uz compinit; compinit
-_comp_options+=(globdots)
+source $HOME/.config/zsh/completions.zsh
+
+# Syntax highlighting
+source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Colorscheme
 cat $HOME/.cache/wallust/sequences
