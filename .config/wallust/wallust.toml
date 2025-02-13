@@ -1,0 +1,9 @@
+backend = "full"
+palette = "dark"
+
+[templates]
+kitty.template = 'colors-kitty.conf'
+kitty.target = '~/.config/kitty/colors.conf'
+
+nvim.template = 'colors-nvim.vim'
+nvim.target = '~/.cache/wal/colors-wal.vim'

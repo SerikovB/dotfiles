@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+alias cp='cp -iv'
+alias rm='rm -iv'
+alias mv='mv -iv'
+
+# Wget
+alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
 # Git
 alias gs='git status'
 alias ga='git add'
@@ -12,6 +19,7 @@ alias gplo='git pull origin'
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
+alias gdt='git difftool --no-symlinks --dir-diff'
 alias gco='git checkout '
 alias gl='git log'
 alias gr='git remote'
@@ -19,6 +27,19 @@ alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
 
+# Grep and Ripgrep
+alias grep='grep -P -i --color=auto'
+alias rg='rg -P -i --color=auto'
+
+# LS
+alias ls='ls --color=auto'
+alias l='ls -l'
+alias ll='ls -lahF'
+alias lls='ls -lahFtr'
+alias la='ls -A'
+alias lc='ls -CF'
+
 # Kitty
 alias icat='kitten icat'
 alias d='kitten diff'
+

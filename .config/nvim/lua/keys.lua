@@ -1,7 +1,6 @@
 local km = vim.keymap.set
 
 km("n", "<leader><space>", "<cmd>nohlsearch<cr>", { desc = "Remove search highlight" })
-km("n", "<c-a>", "ggVG", { desc = "Select All" })
 
 -- Window navigation
 km("n", "<c-j>", "<cmd>wincmd j<cr>", { desc = "Focus Bottom", silent = true, })
@@ -29,6 +28,11 @@ km('n', '<C-4>', function () harpoon:list():select(4) end, { desc = 'Select buff
 km('n', '<C-S-P>', function () harpoon:list():prev() end, { desc = 'Select next buffer' })
 km('n', '<C-S-N>', function () harpoon:list():next() end, { desc = 'Select prev buffer' })
 
+-- Move lines
+km({ 'n', 'i' }, '<a-k>', "ddkP", { desc = "Move Line Up"   })
+km({ 'n', 'i' }, '<a-j>', "ddp",  { desc = "Move Line Down" })
+km({ 'v' }, '<', "<gv",  { desc = "Indentation Left"  })
+km({ 'v' }, '>', ">gv",  { desc = "Indentation Right" })
 
 -- LSP keys
 vim.api.nvim_create_autocmd('LspAttach', {
