@@ -7,3 +7,6 @@ kitty.target = '~/.config/kitty/colors.conf'
 
 nvim.template = 'colors-nvim.vim'
 nvim.target = '~/.cache/wal/colors-wal.vim'
+
+hypr.template = 'colors-hypr.conf'
+hypr.target = '~/.config/hypr/colors.conf'
