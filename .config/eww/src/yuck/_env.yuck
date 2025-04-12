@@ -1,0 +1,9 @@
+(defvar anim_duration "0.3s")
+
+(defpoll uptime :interval "5m" "uptime | ~/.config/eww/src/scripts/uptime.awk")
+
+(deflisten weather :initial "{}"
+  "~/.config/eww/.venv/bin/python ~/.config/eww/src/scripts/weather.py")
+
+(deflisten kb_layout :initial ""
+  "~/.config/eww/src/scripts/get-kb-layout.sh")

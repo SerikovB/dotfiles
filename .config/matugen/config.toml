@@ -1,0 +1,24 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "center"]
+
+[templates.kitty]
+input_path = "./templates/kitty-colors.conf"
+output_path = "~/.config/kitty/colors.conf"
+
+[templates.hyprland]
+input_path = "./templates/hypr-colors.conf"
+output_path = "~/.config/hypr/colors.conf"
+
+[templates.gtk3]
+input_path = "./templates/gtk-colors.css"
+output_path = "~/.config/gtk-3.0/colors.css"
+
+[templates.gtk4]
+input_path = "./templates/gtk-colors.css"
+output_path = "~/.config/gtk-4.0/colors.css"
+
+[templates.eww]
+input_path = "./templates/colors-eww.scss"
+output_path = "~/.config/eww/theme/auto.scss"
+post_hook = "~/.config/eww/scripts/start-eww.sh"

@@ -1,0 +1,9 @@
+.bar-layout-box {
+  padding: 0 10px;
+  font-size: 16;
+  color: $on_surface;
+  background-color: transparent;
+}
+
+@import 'content';
+@import 'modules';

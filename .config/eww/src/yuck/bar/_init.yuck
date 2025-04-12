@@ -1,0 +1,23 @@
+(include './src/yuck/_env.yuck')
+(include './src/yuck/_lib.yuck')
+
+(include './src/yuck/bar/_env.yuck')
+(include './src/yuck/bar/_lib.yuck')
+(include './src/yuck/bar/_modules.yuck')
+(include './src/yuck/bar/_layout.yuck')
+
+(defwindow bar [screen]
+  :monitor screen
+  :stacking "bg"
+  :exclusive true
+  :focusable "none"
+  :namespace "eww"
+  :geometry (geometry
+    :width "100%"
+    :height "4%"
+    :anchor "top center"
+    )
+  (layout
+    :screen screen
+    )
+  )

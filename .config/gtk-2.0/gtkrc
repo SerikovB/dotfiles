@@ -1,0 +1,8 @@
+# ~/.config/gtk-2.0/gtkrc
+
+gtk-can-change-accels = 1
+gtk-icon-theme-name = "Papirus"
+gtk-theme-name = "Orchis-Dark"
+gtk-font-name = "Source Sans 3"
+
+

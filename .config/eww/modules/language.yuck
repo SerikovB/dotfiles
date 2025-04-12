@@ -1,0 +1,15 @@
+(defwidget language []
+  (button
+    :class "language"
+    :onclick "./scripts/kb-switch.sh next &"
+    :onrightclick "./scripts/kb-switch.sh prev &"
+    (language_box)))
+
+(defwidget language_box [] 
+  (box
+    (label
+      :class "kb_icon"
+      :text "")
+    (label
+      :class "layout"
+      :text "${kb-layout}")))

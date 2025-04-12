@@ -1,0 +1,84 @@
+(defwidget powermenu [screen]
+  (box
+    :class "powermenu_widget"
+    :hexpand true
+    :orientation "h"
+    (poweroff)
+    (suspend)
+    (reboot)
+    (logout)
+    (lock)
+    )
+  ) 
+
+(defwidget poweroff []
+(button
+  :onclick 'systemctl poweroff'
+  (box
+    :valign "center"
+    :orientation "v"
+    (label 
+      :class "icon"
+      :text "󰐥")
+    (label
+        :class "label"
+        :text "poweroff")
+      )
+    )
+  )
+
+(defwidget reboot []
+  (button
+    :onclick 'systemctl reboot'
+    (box
+      :valign "center"
+      :orientation "v"
+      (label 
+        :class "icon"
+        :text "󰜉")
+      (label
+        :class "label"
+        :text "reboot")
+      )))
+
+(defwidget suspend []
+  (button
+    :onclick 'systemctl suspend'
+    (box
+      :valign "center"
+      :orientation "v"
+      (label 
+        :class "icon"
+        :text "󰤄")
+      (label
+        :class "label"
+        :text "suspend")
+      )))
+
+(defwidget logout []
+  (button
+    :onclick 'loginctl terminate-user $USER'
+    (box
+      :valign "center"
+      :orientation "v"
+      (label 
+        :class "icon"
+        :text "󰍃")
+      (label
+        :class "label"
+        :text "logout")
+      )))
+
+(defwidget lock []
+  (button
+    :onclick 'loginctl lock-session'
+    (box
+      :valign "center"
+      :orientation "v"
+      (label 
+        :class "icon"
+        :text "")
+      (label
+        :class "label"
+        :text "lock")
+      )))

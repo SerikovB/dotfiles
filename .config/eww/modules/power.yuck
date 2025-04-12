@@ -1,0 +1,6 @@
+(defwidget powerbutton []
+  (button
+    :class "powerbutton"
+    :onclick "sh ~/.config/eww/scripts/toggle-powermenu.sh"
+    (label
+      :text "⏻")))

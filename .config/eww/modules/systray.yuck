@@ -1,0 +1,14 @@
+(defwidget tray []
+  (box
+    :class "tray_box"
+    :orientation "h"
+    :space-evenly false
+    (systray
+      :spacing 5 
+      :orientation "h"
+      :icon-size 20
+      :hexpand true
+      :halign "center"
+      :pack-direction "left"
+      :prepend-new true
+      )))

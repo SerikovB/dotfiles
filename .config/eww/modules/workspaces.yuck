@@ -1,0 +1,14 @@
+(defwidget workspaces [screen]
+  (eventbox 
+    :onscroll "~/.config/eww/scripts/change-workspace {}"
+    (box 
+      :class "workspaces"
+      :orientation "h"
+      :space-evenly false
+      :hexpand true
+      (for workspace in workspaces
+        (button 
+          :class "workspace ${current-workspace == workspace.id ? "current" : ""}"
+          :visible {workspace.monitorID == screen ? true : false}
+          :onclick "hyprctl dispatch workspace ${workspace.id}"
+          "${current-workspace == workspace.id ? " " : " "}")))))

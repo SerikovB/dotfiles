@@ -75,4 +75,4 @@ source $HOME/.config/zsh/completions.zsh
 source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Colorscheme
-cat $HOME/.cache/wallust/sequences
+# cat $HOME/.cache/wallust/sequences

@@ -1,0 +1,68 @@
+
+.bar-center-workspace {
+  background-color: $on_secondary;
+  border-radius: 1rem;
+  margin: 0.25rem 0.25rem;
+  padding: 0 0.8rem;
+  transition: 0.3s;
+
+  &.current {
+    background-color: $secondary;
+    padding: 0 1.2rem;
+  }
+
+  &:hover {
+    background-color: color_mix($on_secondary, $on_surface);
+    &.current {
+      background-color: color_mix($secondary, $surface);
+    }
+  }
+}
+
+.bar-box-arrow {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin: 0.5rem;
+  transition: 0.3s;
+}
+
+.bar-tray-box {
+  padding: 0 0.25rem;
+}
+
+.bar-left-logo, .bar-right-power {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin: 0.25rem 0.5rem;
+  transition: 0.3s;
+  &:hover {
+    color: color_mix($on_surface, $surface);
+  }
+}
+
+.bar-left-clock, .bar-left-weather {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin: 0.25rem 0.25rem;
+  transition: 0.3s;
+  &:hover {
+    color: color_mix($primary, $surface);
+  }
+}
+
+.bar-right-kblayout, .bar-right-battery {
+  font-size: 1rem;
+  font-weight: bolder;
+  margin: 0.25rem 0.25rem;
+  transition: 0.3s;
+  &:hover {
+    color: color_mix($tertiary, $surface);
+  }
+}
+
+.battery-low {
+  color: $error;
+  %hover {
+    color: color_mix($error, $surface);
+  }
+}

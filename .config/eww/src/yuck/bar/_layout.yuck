@@ -1,0 +1,94 @@
+(defwidget layout [screen]
+  (box
+    :class "bar-layout-box"
+    :space-evenly true
+    :vexpand false
+    :orientation "h"
+    (box 
+      :class "bar-layout-content"
+      :hexpand true
+      :space-evenly true
+      :orientation "h"
+      (box 
+        :class "bar-content-left"
+        :space-evenly false
+        :halign "start"
+        :orientation "h"
+        (logo)
+        (bar-box-left)
+        (tray)
+        )
+      (box 
+        :class "bar-content-center"
+        :space-evenly false
+        :hexpand true
+        :halign "center"
+        :orientation "h"
+        (workspaces
+          :screen screen)
+        )
+      (box 
+        :class "bar-content-right"
+        :space-evenly false
+        :hexpand true
+        :halign "end"
+        :orientation "h"
+        (bar-box-right)
+        (power)
+        )
+      )
+    )
+  )
+
+(defwidget bar-box-left []
+  (_revealer_on_hover 
+    :var bar_left_box
+    :varname "bar_left_box"
+    :class "bar-box-left"
+    (box
+      :orientation "h"
+      :space-evenly false
+      (clock)
+      (weather)
+      )
+    (clock)
+    (left-box-arrow
+      :turn_var bar_left_box)
+    )
+  )
+
+(defwidget left-box-arrow [turn_var]
+  (_label
+    :hexpand false
+    :limit-width 2 
+    :class "bar-box-arrow"
+    :text {turn_var ? "" : ""}
+    )
+  )
+
+(defwidget bar-box-right []
+  (_revealer_on_hover 
+    :var bar_right_box
+    :varname "bar_right_box"
+    :class "bar-box-right"
+    :transition "slideleft"
+    (right-box-arrow
+      :turn_var bar_right_box)
+    (clock)
+    (box
+      :orientation "h"
+      :space-evenly false
+      (keyboard)
+      (battery)
+      )
+    )
+  )
+
+(defwidget right-box-arrow [turn_var]
+  (_label
+    :hexpand false
+    :limit-width 2 
+    :class "bar-box-arrow"
+    :text {turn_var ? "" : ""}
+    )
+  )

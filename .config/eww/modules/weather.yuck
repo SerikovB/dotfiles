@@ -1,0 +1,27 @@
+(defwidget weather []
+  (tooltip
+    (label
+      :text
+{weather == "null" ? "weather not available" :
+"${weather.location}
+${weather.desc}"}
+      )
+    (button
+      :class "weather"
+      (box
+        :orientation "h"
+        :space-evenly false
+        (label
+          :class "weather-icon"
+          :halign "start"
+          :text {weather == "null" ? "" : weather.icon} 
+          )
+        (label
+          :class "weather-temp"
+          :halign "start"
+          :text {weather == "null" ? "n/a" : weather.temp}
+          )
+        )
+      )
+    )
+  )

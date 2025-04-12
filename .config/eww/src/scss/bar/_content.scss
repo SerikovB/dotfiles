@@ -1,0 +1,39 @@
+.bar-layout-content {
+  box-shadow: 3px 3px 2px add_alpha($shadow);
+  background-color: add_alpha($surface);
+  border-radius: 10px;
+  margin: 5px 0px;
+}
+
+.bar-box-left {
+  background-color: $primary_container;
+  color: $primary;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 0 0.25rem;
+}
+
+.bar-box-center {
+  background-color: $secondary_container;
+  color: $secondary;
+  border-radius: 10px;
+  padding: 0 0.5rem;
+  margin: .25rem 0;
+}
+
+.bar-box-right {
+  background-color: $tertiary_container;
+  color: $tertiary;
+  border-radius: 10px;
+  border-radius: 10px;
+  padding: 0 0.5rem;
+  margin: .25rem 0;
+}
+
+.bar-content-left {
+  margin-left: 0.5rem;
+}
+
+.bar-content-right {
+  margin-right: 0.5rem;
+}

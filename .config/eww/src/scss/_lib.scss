@@ -1,0 +1,7 @@
+@function add_alpha($color) {
+  @return rgba($color, $alpha)
+}
+
+@function color_mix($color1, $color2) {
+  @return mix($color1, $color2, $mix_percent)
+}

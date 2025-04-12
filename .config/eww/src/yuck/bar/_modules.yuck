@@ -1,0 +1,159 @@
+(defwidget workspaces [screen]
+  (eventbox 
+    :onscroll "~/.config/eww/scripts/change-workspace.sh {}"
+    (box
+      :class "bar-box-center"
+      :orientation "h"
+      :space-evenly false
+      :hexpand true
+      (for workspace in workspaces
+        (_label
+          :hexpand false
+          :halign "center"
+          :valign "center"
+          :visible {workspace.monitorID == screen ? true : false}
+          :btn-class 'bar-center-workspace ${current-workspace == workspace.id ? "current" : ""}'
+          :L "hyprctl dispatch workspace ${workspace.id}"
+          :M ""
+          :R ""
+          :text ""
+          )
+        )
+      )
+    )
+  )
+
+(defwidget tray []
+  (box
+    :class "bar-tray-box"
+    :orientation "h"
+    :space-evenly false
+    (systray
+      :spacing 5 
+      :orientation "h"
+      :icon-size 20
+      :hexpand true
+      :halign "center"
+      :pack-direction "left"
+      :prepend-new true
+      )
+    )
+  )
+
+(defwidget logo []
+  (_label
+    :hexpand false
+    :btn-class "bar-left-logo"
+    :halign "center"
+    :valign "center"
+    :text ""
+    :L ""
+    :M ""
+    :R ""
+    )
+  )
+
+(defwidget power []
+  (_label
+    :hexpand false
+    :btn-class "bar-right-power"
+    :halign "center"
+    :valign "center"
+    :text "⏻"
+    :L ""
+    :M ""
+    :R ""
+    )
+  )
+
+(defwidget clock []
+  (_label 
+    :hexpand true
+    :valign "center"
+    :btn-class "bar-left-clock"
+    :tooltip "Uptime: ${uptime}"
+    :L "~/.config/eww/src/scripts/toggle-bar-label.sh bar_clock_alt"
+    :M ""
+    :R ""
+    :text "${bar_clock_alt ? 
+      formattime(EWW_TIME, "   %b %d, %a"):
+      formattime(EWW_TIME, "   %H:%M:%S")
+    }"
+    )
+  )
+
+(defwidget weather []
+  (_label 
+    :hexpand true
+    :valign "center"
+    :btn-class "bar-left-weather"
+    :tooltip "Uptime: ${uptime}"
+    :L "~/.config/eww/src/scripts/toggle-bar-label.sh bar_weather_alt"
+    :M ""
+    :R ""
+    :text {
+      bar_weather_alt ?
+      " ${weather.location}" :
+      "${weather.icon}  ${weather.temp}${weather.temp != 'NA' ? '°' : ''}"
+    }
+    :tooltip {
+      weather.temp == 'NA' ?
+        "not available" :
+        "${weather.desc}, feels like ${weather.feels_like}°,
+Humidity: ${weather.humidity}%, 
+Pressure: ${weather.pressure} hPa."
+    }
+    )
+  )
+
+(defwidget keyboard []
+  (_label
+    :hexpand false
+    :valign "center"
+    :btn-class "bar-right-kblayout"
+    :L "~/.config/eww/src/scripts/kb-switch.sh next &"
+    :M ""
+    :R "~/.config/eww/src/scripts/kb-switch.sh prev &"
+    :text "   ${kb_layout}"
+    )
+  )
+
+
+(defwidget battery []
+  (_label
+    :hexpand false
+    :valign "center"
+    :btn-class "bar-right-battery ${
+      EWW_BATTERY.BAT0.capacity < 15 ? "battery-low" : ""
+    }"
+    :tooltip ""
+    :L ""
+    :M ""
+    :R ""
+    :text "${
+      EWW_BATTERY.BAT0.status != "Discharging" ? "󰂄" :
+      EWW_BATTERY.BAT0.capacity < 10 ? "󰁺" :
+      EWW_BATTERY.BAT0.capacity < 20 ? "󰁻" :
+      EWW_BATTERY.BAT0.capacity < 30 ? "󰁼" :
+      EWW_BATTERY.BAT0.capacity < 40 ? "󰁽" :
+      EWW_BATTERY.BAT0.capacity < 50 ? "󰁾" :
+      EWW_BATTERY.BAT0.capacity < 60 ? "󰁿" :
+      EWW_BATTERY.BAT0.capacity < 70 ? "󰂀" :
+      EWW_BATTERY.BAT0.capacity < 80 ? "󰂁" :
+      EWW_BATTERY.BAT0.capacity < 90 ? "󰂂" :
+      "󰁹"
+    } ${EWW_BATTERY.BAT0.capacity}%"
+    )
+  )
+
+
+
+
+
+
+
+
+
+
+
+

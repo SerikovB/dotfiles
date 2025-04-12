@@ -1,0 +1,70 @@
+$alpha: .8;
+$mix_percent: 70%;
+
+* {
+  all: unset;
+}
+
+tooltip {
+  border-radius: 10px;
+  background-color: add_alpha($surface);
+  color: $on_surface;
+  margin: .25rem;
+}
+
+menu {
+  background-color: add_alpha($surface);
+  border-radius: 10px;
+  color: $on_surface;
+  padding: .25rem;
+
+  &>menuitem {
+    padding: 0.1rem 0rem;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+
+  &>*:hover {
+    color: color_mix($on_surface, $surface);
+    font-style: italic;
+  }
+
+  arrow {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    min-height: 1em;
+    min-height: 1em;
+  }
+
+  separator {
+		background-color: $outline;
+		padding: 1px;
+    margin: 0 0.2rem;
+    
+		&:last-child {
+			padding: unset;
+		}
+    &:disabled label {
+			color: $shadow;
+		}
+	}
+
+  radio {
+    -gtk-icon-source: -gtk-icontheme("radio-symbolic");
+    &:checked {
+      -gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
+    }
+    padding-right: 0.5em;
+    min-height: 1em;
+    min-height: 1em;
+  }
+
+  check {
+    -gtk-icon-source: -gtk-icontheme("checkbox-symbolic");
+    &:checked {
+      -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
+    }
+    padding-right: 0.5em;
+    min-height: 1em;
+    min-height: 1em;
+  }
+}

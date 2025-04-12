@@ -1,0 +1,86 @@
+.tray_box {
+  padding: 0 0.25rem;
+}
+
+tooltip {
+  background-color: rgba($surface_variant, .95);
+  color: $on_surface;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+menu {
+  background-color: rgba($surface_variant, .95);
+  border-radius: 5px;
+  padding: 0.25rem;
+  color: $on_surface;
+  font-size: 1.1rem;
+
+  arrow {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+
+    min-height: 1em;
+    min-height: 1em;
+  }
+
+  radio {
+    -gtk-icon-source: -gtk-icontheme("radio-symbolic");
+
+    &:checked {
+      -gtk-icon-source: -gtk-icontheme("radio-checked-symbolic");
+        &:hover {
+          color: mix($on_surface, $primary, 70%);
+        }
+    }
+
+    &:hover {
+      color: mix($on_surface, $primary, 70%);
+    }
+
+    padding-right: 0.5em;
+    min-height: 1em;
+    min-height: 1em;
+  }
+
+  check {
+    -gtk-icon-source: -gtk-icontheme("checkbox-symbolic");
+
+    &:checked {
+      -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic");
+        &:hover {
+          color: mix($on_surface, $primary, 70%);
+        }
+    }
+
+    &:hover {
+      color: mix($on_surface, $primary, 70%);
+    }
+
+    padding-right: 0.5em;
+    min-height: 1em;
+    min-height: 1em;
+  }
+
+  separator {
+		background-color: $outline;
+		padding-top: 1px;
+
+		&:last-child {
+			padding: unset;
+		}
+
+    &:disabled label {
+			color: $shadow;
+		}
+	}
+}
+
+menu>menuitem {
+  padding: 0.25rem 0.5rem;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+menu>menuitem:hover {
+  background-color: mix($on_surface_variant, $surface_variant, 70%);
+}

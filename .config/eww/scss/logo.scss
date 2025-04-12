@@ -1,0 +1,10 @@
+.logo {
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color: $on_surface;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  color: mix($on_surface, $surface, 70%);
+}

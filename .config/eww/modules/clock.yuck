@@ -1,0 +1,14 @@
+(defwidget clock []
+  (tooltip
+    (label
+      :text {formattime(EWW_TIME, "%d %B %Y
+%A")})
+    (button 
+      :class "clock"
+      :onclick ""
+      (label
+        :class "clock-lable"
+        :text {formattime(EWW_TIME, "%I:%M %p")})
+      )
+    )
+  )

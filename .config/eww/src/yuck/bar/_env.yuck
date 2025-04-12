@@ -1,0 +1,14 @@
+(defvar bar_left_box false)
+(defvar bar_right_box false)
+
+(defvar bar_weather_alt false)
+(defvar bar_clock_alt false)
+
+(deflisten workspaces :initial "[1]"
+  "~/.config/eww/src/scripts/get-workspaces.sh")
+
+(deflisten current-workspace :initial ""
+  "~/.config/eww/src/scripts/get-current-workspace.sh")
+
+(deflisten kb-layout :initial "en"
+  "~/.config/eww/src/scripts/get-kb-layout.sh")

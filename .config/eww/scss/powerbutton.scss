@@ -1,0 +1,11 @@
+.powerbutton {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+  font-weight: bolder;
+  color: $on_surface;
+  transition: 0.3s;
+}
+
+.powerbutton:hover {
+  color: mix($on_surface, $surface, 70%);
+}

@@ -1,0 +1,61 @@
+(defwidget bar [screen]
+  (box
+    :class "bar-widget"
+    :orientation "h"
+    :space-evenly true
+
+    (box
+      :orientation "h"
+      :space-evenly false
+      :halign "start"
+      (bar-sep)
+      (logo)
+      (bar-sep)
+      (left-box)
+      (bar-sep)
+      (tray)
+      (bar-sep)
+      )
+
+    (box
+      :orientation "h"
+      :space-evenly false
+      :halign "center"
+      (workspaces
+        :screen screen)
+      )
+
+    (box
+      :orientation "h"
+      :space-evenly false
+      :halign "end"
+      (bar-sep)
+      (right-box)
+      (bar-sep)
+      (powerbutton)
+      (bar-sep)
+      )))
+
+(defwidget left-box []
+  (box
+    :class "left-box"
+    :orientation "h"
+    :space-evenly "false"
+    (clock)
+    (bar-sep)
+    (weather)
+    ))
+
+(defwidget right-box []
+  (box
+    :class "right-box"
+    :orientation "h"
+    :space-evenly "false"
+    (language)
+    ))
+
+(defwidget bar-sep []
+  (box
+    :class "bar-sep"
+    :orientation "h"
+    :space-evenly "false"))

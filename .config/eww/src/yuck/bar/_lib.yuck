@@ -1,0 +1,49 @@
+(defwidget _label [hexpand ?limit-width ?halign ?tooltip ?btn-class ?lbl-class ?icon ?text ?visible ?L ?M ?R]
+  (button
+    :hexpand hexpand
+    :halign {halign ?: "start"}
+    :tooltip tooltip
+    :class "bar-button ${btn-class}"
+    :visible {visible ?: true}
+    :onclick L
+    :onmiddleclick M
+    :onrightclick R
+    (label 
+      :text text
+      :halign "center"
+      :valign "center"
+      :limit-width {limit-width ?: 100}
+      :class "bar-label ${lbl-class}"
+      )
+    )
+  )
+
+(defwidget _revealer_on_hover [var varname ?class ?duration ?transition]
+  (box 
+    :class "bar-revealer ${class}"
+    :orientation "h"
+    :space-evenly false
+    (eventbox 
+      :class "eventbox"
+      :onhover "eww update ${varname}=true"
+      :onhoverlost "eww update ${varname}=false"
+      (box 
+        :space-evenly false
+          (children
+            :nth 0
+            )
+          (revealer 
+            :reveal var
+            :transition {transition ?: "slideright"}
+            :duration { duration ?: anim_duration }
+            (children
+              :nth 1
+              )
+            )
+          (children
+            :nth 2
+            )
+        )
+      )
+    )
+  )

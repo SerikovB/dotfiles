@@ -1,0 +1,20 @@
+.left-box {
+  background-color: $on_primary;
+  color: $primary;
+  border-radius: 10px;
+  padding: 0rem .5rem;
+  font-size: 1.1rem;
+}
+
+.clock:hover {
+  color: mix($primary, $on_primary, 70%);
+}
+
+.weather:hover {
+  color: mix($primary, $on_primary, 70%);
+}
+
+.weather-icon {
+  margin-right: .5rem;
+  padding-top: .15rem;
+}

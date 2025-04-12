@@ -1,0 +1,21 @@
+.right-box {
+  background-color: $on_tertiary;
+  color: $tertiary;
+  border-radius: 10px;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.kb_icon {
+  margin-left: 0.5rem;
+  margin-right: 0.6rem;
+  padding-top: .25rem;
+}
+
+.layout {
+  margin-right: 0.5rem;
+}
+
+.language:hover {
+  color: mix($on_tertiary, $tertiary, 70%);
+}
